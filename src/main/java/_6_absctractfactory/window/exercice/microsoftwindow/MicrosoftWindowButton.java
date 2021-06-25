@@ -1,4 +1,6 @@
 package _6_absctractfactory.window.exercice.microsoftwindow;
 
-public class MicrosoftWindowButton implements MicrosoftWindowComponent {
+import _6_absctractfactory.window.correction.Button;
+
+public class MicrosoftWindowButton implements Button {
 }

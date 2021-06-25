@@ -1,7 +1,12 @@
 package _6_absctractfactory.window.exercice.web;
 
 
-public class WebScreen {
-    public void add(WebComponent webComponent) {
+import _6_absctractfactory.window.correction.Component;
+import _6_absctractfactory.window.correction.Screen;
+
+public class WebScreen implements Screen {
+    @Override
+    public void add(Component component) {
+
     }
 }
