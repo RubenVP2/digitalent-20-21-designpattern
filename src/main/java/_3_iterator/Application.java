@@ -1,5 +1,7 @@
 package _3_iterator;
 
+import _3_iterator.arbre.Arbre;
+
 import java.util.HashSet;
 
 public class Application {
@@ -42,20 +44,30 @@ public class Application {
         maLinkedListString.add("A");
         maLinkedListString.add("B");
         maLinkedListString.add("C");
-        System.out.println(maLinkedListString.get(0));
-        System.out.println(maLinkedListString.get(1));
-        System.out.println(maLinkedListString.get(2));
 
-
-        HashSet<String> set = new HashSet<>();
-        set.add("A");
-        set.add("B");
-
-        for (String e : set) {
-
+        for (Iterator iterator = maLinkedListString.createIterator(); iterator.hasNext();) {
+            String e = iterator.getNext();
+            System.out.println(e);
         }
-        for (java.util.Iterator<String> iterator = set.iterator(); iterator.hasNext(); ) {
-            String elem = iterator.next();
+
+
+        System.out.println("------- ArbreIterator -------");
+        Arbre arbreA = new Arbre();
+        arbreA.setValeur("A");
+        Arbre arbreB = new Arbre();
+        arbreB.setValeur("B");
+        Arbre arbreC = new Arbre();
+        arbreC.setValeur("C");
+        Arbre arbreD = new Arbre();
+        arbreD.setValeur("D");
+
+        arbreA.setSousArbreDroit(arbreC);
+        arbreA.setSousArbreGauche(arbreB);
+        arbreB.setSousArbreGauche(arbreD);
+
+        for ( Iterator iterator = arbreA.createIterator(); iterator.hasNext();) {
+            System.out.println(iterator.getNext());
         }
+
     }
 }

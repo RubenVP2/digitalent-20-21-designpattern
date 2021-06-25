@@ -2,6 +2,7 @@ package _3_iterator;
 
 public class MaLinkedListStringIterator implements Iterator {
     private MaLinkedListString maLinkedListString;
+    private Integer currentPosition = 0;
 
     public MaLinkedListStringIterator(MaLinkedListString maLinkedListString) {
         this.maLinkedListString = maLinkedListString;
@@ -9,11 +10,16 @@ public class MaLinkedListStringIterator implements Iterator {
 
     @Override
     public String getNext() {
-        return null;
+        if ( !hasNext() ) {
+            return null;
+        }
+        String nextElement = maLinkedListString.get(currentPosition);
+        currentPosition++;
+        return nextElement;
     }
 
     @Override
     public boolean hasNext() {
-        return false;
+        return currentPosition < maLinkedListString.count();
     }
 }

@@ -1,7 +1,8 @@
 package _3_iterator.arbre;
 
+import _3_iterator.Iterator;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Application {
@@ -23,15 +24,8 @@ public class Application {
 
         a3.setSousArbreDroit(a4);
 
-        parcourir(a1);
-
-        for (Iterator<Arbre> iterator = a1.iterator(); iterator.hasNext(); ) {
-            Arbre arbre = iterator.next();
-            System.out.println(arbre.getValeur());
-        }
-
-        for (Arbre a : a1) {
-            System.out.println(a.getValeur());
+        for (Iterator iterator = a1.createIterator(); iterator.hasNext(); ) {
+            System.out.println(iterator.getNext());
         }
     }
 
